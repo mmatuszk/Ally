@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  
+  "name": "Ally",
+  "description": "Ally Bank Tools",
+  "version": "1.0",
+  
+  // "browser_action": {
+    // "default_icon": "drm-enabled-38.png",
+    // "default_popup": "popup.html"
+  // },
+  
+  "content_scripts": [
+    {
+      "matches": ["*://*.ally.com/*", "*://localhost/*"],
+      "js": ["jquery-2.1.4.js", "date.format.js", "tools.js", "content.js"]
+    }
+  ],
+  
+  "background": {
+    "scripts": ["background.js"]
+  },
+  
+  // "options_page": "options.html",
+  
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage"
+    ]
+}
